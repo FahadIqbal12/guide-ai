@@ -125,9 +125,9 @@ const Dashboard = () => {
                             <h2 className='text-[15px]' >{(item.title).substring(0,50)}....</h2>
                             <h4 className='text-[10px] mt-1' >By {item.author}</h4>
                             <div className='mt-3 flex justify-between'>
-                                <button className='p-1 text-[14px] bg-red-500 font-bold text-white rounded-lg' disabled={loader}>
+                                <a href={`http://www.youtube.com/watch?v=${item.video_id}`} target='_blank' className='p-1 text-[14px] bg-red-500 font-bold text-white rounded-lg' disabled={loader}>
                                     Youtube
-                                </button>
+                                </a>
                                 <button className='p-1 text-[14px] bg-black font-bold text-white rounded-lg' disabled={loader} onClick={()=>{deleteCourse(index)}}>
                                    Delete
                                 </button>

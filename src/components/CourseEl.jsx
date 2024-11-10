@@ -35,6 +35,7 @@ const CourseEl = (props) => {
             <h2>Here are list of top courses/resources that you can use...</h2>
             <div>
             {data.map((item,index)=>{
+                console.log(item)
                 return(
                     <div key={index} className='flex mt-1 border-b-2 p-1 w-full'>
                         <img src={item.thumbnails[0].url} className='w-[150px] rounded-lg' />
@@ -42,9 +43,9 @@ const CourseEl = (props) => {
                             <h2 className='text-[15px]' >{(item.title).substring(0,36)}...</h2>
                             <h4 className='text-[10px] mt-1' >{item.author}</h4>
                             <div className='mt-3 flex justify-between w-full'>
-                                <button className='p-1 text-[14px] bg-red-500 font-bold text-white rounded-lg' disabled={loader}>
+                                <a href={`http://www.youtube.com/watch?v=${item.video_id}`} target='_blank' className='p-1 text-[14px] bg-red-500 font-bold text-white rounded-lg' disabled={loader}>
                                     Youtube
-                                </button>
+                                </a>
                                 <button className='p-1 text-[14px] bg-black font-bold text-white rounded-lg' disabled={loader} onClick={()=>{setI(index);saveCourse(item)}}>
                                     {loader==true && i==index?'Saving':'Save to courses'}
                                 </button>
