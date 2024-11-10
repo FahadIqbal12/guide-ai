@@ -58,7 +58,7 @@ const NewResume = (props) => {
             const docRef = collection(db,"users",user.uid,"resume")
             await addDoc(docRef,data)
             setLoader(false)
-            props.ref((prev)=>prev+1)
+            props.refresh((prev)=>prev+1)
             props.onClose()
 
         }else{

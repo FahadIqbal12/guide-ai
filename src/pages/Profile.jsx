@@ -82,7 +82,7 @@ const Profile = () => {
         </div>
         :
       <div>
-        <NewResume open={newRes} onClose={()=>{setNewRes(false)}} ref={setREFRESH}/>
+        <NewResume open={newRes} onClose={()=>{setNewRes(false)}} refresh={setREFRESH}/>
         <div className='mt-5 border-b-2 border-black p-2' >
           <button className='p-2 bg-black text-white rounded-xl' onClick={()=>{navigate(`/resume/${user.uid}`)}}>
             Public Resume
